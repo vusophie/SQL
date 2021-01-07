@@ -9,9 +9,6 @@ CREATE table users (id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE);
 /*Followers table*/
 CREATE table followers (followed_id INTEGER REFERENCES users(id), follower_id INTEGER REFERENCES users(id), PRIMARY KEY(followed_id, follower_id));
 
-/*Key to search through a user's followers*/
-CREATE INDEX follower_index ON followers(follower_id);
-
 /*Creating 3 users*/
 INSERT INTO users VALUES (1, "elonmusk");
 INSERT INTO users VALUES (2, "Wendys");
